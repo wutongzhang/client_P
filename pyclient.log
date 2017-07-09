@@ -1,7 +1,7 @@
-[2017-07-09 22:24:03]....C:\Users\wutong\Desktop\untitled2\untitled2\ALEX_20170708142322_list_doc_tree.json
-[2017-07-09 22:24:03]....type=list_doc_tree
-[2017-07-09 22:24:03]....Creating socket object
-[2017-07-09 22:24:03]....Connecting to 10.103.101.43:4396
-[2017-07-09 22:24:04]....Sending query
-[2017-07-09 22:24:05]....ClientDownload1FileFromServer;FU1FLE,filesize=1031
-[2017-07-09 22:24:05]....Shutting down socket
+[2017-07-10 00:46:09]....C:\Users\wutong\Desktop\untitled2\untitled2\ALEX_20170708143321_download_file.json
+[2017-07-10 00:46:09]....type=download_file
+[2017-07-10 00:46:09]....Creating socket object
+[2017-07-10 00:46:09]....Connecting to 10.103.101.43:4396
+[2017-07-10 00:46:10]....Sending query
+[2017-07-10 00:46:15]....ClientDownload1FileFromServer;FU1FLE,filesize=1508302
+[2017-07-10 00:46:16]....Shutting down socket

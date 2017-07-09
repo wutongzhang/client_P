@@ -110,8 +110,8 @@ try:
 		ClientDownloadShFromServer(mysocket, f, paramfilename)
 	if typeName == "list_doc_tree":
 	 	ClientDownloadTrFromServer(mysocket, f, paramfilename)
-	# if typeName == "download_file":
-	# 	ClientDownloadFileFromServer(typeName, mysocket, f, paramfilename, clientfilepath,clientfilename)
+	if typeName == "download_file":
+	 	ClientDownloadFileFromServer(mysocket, f, paramfilename)
 
 except socket.error as e:
 	print("Error sending data: %s" % e)
