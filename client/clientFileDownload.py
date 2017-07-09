@@ -22,7 +22,7 @@ def ClientDownloadFileFromServer(typeName,mysock,f,paramfilename,clientfilepath,
     fp.close()
 
     buf = mysock.recv(BUFSIZE)
-    buf = buf.decode('utf-8')
+    #buf = buf.decode('utf-8')
     print("  ClientDownload1FileFromServer semantics:3.recv buf=", buf)
     if (buf.find('OK') >= 0):#.encode('utf-8')
         FILEINFO_SIZE = struct.calcsize('<128s32sI8s')
