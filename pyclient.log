@@ -1,6 +1,7 @@
-[2017-07-08 17:15:18]....C:\Users\wutong\Desktop\untitled2\untitled2\download.json
-[2017-07-08 17:15:18]....type=list_all_shapes
-[2017-07-08 17:15:18]....Creating socket object
-[2017-07-08 17:15:18]....Connecting to 10.103.101.43:4396
-[2017-07-08 17:15:19]....Sending query
-[2017-07-08 17:15:20]....Shutting down socket
+[2017-07-09 21:52:28]....C:\Users\wutong\Desktop\untitled2\untitled2\ALEX_20170708142032_list_all_shapes.json
+[2017-07-09 21:52:28]....type=list_all_shapes
+[2017-07-09 21:52:28]....Creating socket object
+[2017-07-09 21:52:28]....Connecting to 10.103.101.43:4396
+[2017-07-09 21:52:29]....Sending query
+[2017-07-09 21:52:30]....ClientDownload1FileFromServer;FU1FLE,filesize=89
+[2017-07-09 21:52:31]....Shutting down socket

@@ -3,10 +3,9 @@
 import socket
 import sys
 
-from client.clientFileUpload import *
-from client.clientListShapes import *
-from client.clientListDocTree import *
-from client.clientFileDownload import *
+from clientListShapes import *
+from clientListDocTree import *
+from clientFileDownload import *
 
 
 import json
@@ -24,7 +23,8 @@ f = open("../pyclient.log", "w")
 
 if len(sys.argv) == 2:
 	paramfilename = sys.argv[1]
-	#print(paramfilename)
+	print("~~~~~~~~~~~~~~~~~~~~~~~"+sys.argv[0])
+	print("~~~~~~~~~~~~~~~~~~~~~~~" + sys.argv[1])
 	mylog(3, f, paramfilename)
 else:
     #print("usage: %s paramfilename(including path)" % sys.argv[0])
@@ -45,8 +45,7 @@ print('origion: ' + str)
 host = json['srvip']
 textport = json['srvport']
 typeName = json['type']
-clientfilepath = json['clientfilepath']
-print(host, textport, typeName, clientfilepath)
+print(host, textport, typeName)
 
 
 mylog(3,f,"type="+typeName)
@@ -108,11 +107,11 @@ try:
 	#############################################################################
 
 	if typeName == "list_all_shapes":
-		ClientDownloadShFromServer(typeName, mysocket, f, paramfilename, clientfilepath)
+		ClientDownloadShFromServer(mysocket, f, paramfilename)
 	if typeName == "list_doc_tree":
-		ClientDownloadTrFromServer(typeName, mysocket, f, paramfilename, clientfilepath)
-	if typeName == "download_file":
-		ClientDownloadFileFromServer(typeName, mysocket, f, paramfilename, clientfilepath)
+	 	ClientDownloadTrFromServer(mysocket, f, paramfilename)
+	# if typeName == "download_file":
+	# 	ClientDownloadFileFromServer(typeName, mysocket, f, paramfilename, clientfilepath,clientfilename)
 
 except socket.error as e:
 	print("Error sending data: %s" % e)

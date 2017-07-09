@@ -8,12 +8,6 @@ import socket, sys, time
 from threading import *
 import struct
 import os
-import stat
-import binascii
-
-from xml.dom import minidom
-import string
-import random
 
 from client.clientCommonFunction import mylog
 

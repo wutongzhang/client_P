@@ -1,21 +1,12 @@
 # -*- coding:utf-8 -*-
-################################################
-# 仅用于测试文件传输，实际语义并没有使用
-# ClientDownload1FileFromServer函数有用
-################################################
-'''
-Created on 2012-8-20
-
-@author: test
-'''
 import socket, sys, time
 import struct
 
 
-from client.clientCommonFunction import mylog
+from clientCommonFunction import mylog
 
 
-def ClientDownloadFileFromServer(typeName,mysock,f,paramfilename,clientfilepath):
+def ClientDownloadFileFromServer(typeName,mysock,f,paramfilename,clientfilepath,clientfilename):
     # parser the parameter file
     print("  ClientDownload1FileFromServer START...")
     FBUFSIZE = 1024
@@ -31,15 +22,17 @@ def ClientDownloadFileFromServer(typeName,mysock,f,paramfilename,clientfilepath)
     fp.close()
 
     buf = mysock.recv(BUFSIZE)
+    buf = buf.decode('utf-8')
     print("  ClientDownload1FileFromServer semantics:3.recv buf=", buf)
-    if (buf.find('OK') >= 0):
+    if (buf.find('OK') >= 0):#.encode('utf-8')
         FILEINFO_SIZE = struct.calcsize('<128s32sI8s')
         fhead = mysock.recv(FILEINFO_SIZE)
 
         filename, temp1, filesize, temp2 = struct.unpack('<128s32sI8s', fhead)
         # clientfilename=clientfilepath+string.join(random.sample(['a','b','c','d','e','f','g','h','i','j','k','L','m','n','o','p','q','r','s','t'], 8)).replace(" ","")+"_"+downloadfilename.strip('\00')
-        clientfilename = clientfilepath.strip('\00')
-
+        filename = filename.decode('utf-8')
+        filename = filename.strip("\00")
+        print(filename)
         print("  ClientDownload1FileFromServer semantics:4.recv clientfilename=", clientfilename)
         fp = open(clientfilename, 'wb')
         restsize = filesize
@@ -63,20 +56,6 @@ def ClientDownloadFileFromServer(typeName,mysock,f,paramfilename,clientfilepath)
         pass
     print("  ClientDownload1FileFromServer END.")
     pass
-
-
-###################################################################################
-# �����ļ�
-###################################################################################
-def clientFD1FLE(typeName,mysocket,paramfilename,clientfilepath,flog):
-    ###############################################################################
-
-
-
-        for i in range(0, 200):
-            print("i=", i)
-            ClientDownload1FileFromServer(typeName,mysocket,flog,paramfilename,clientfilepath)
-
 
 if __name__ == '__main__':
     pass
