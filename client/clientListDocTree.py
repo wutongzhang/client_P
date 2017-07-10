@@ -19,7 +19,7 @@ def ClientDownloadTrFromServer(mysock,f,paramfilename):
         if not filedata: break
         mysock.sendall(filedata)
     fp.close()
-
+    print("  ...")
     fp = open(paramfilename, 'r')
     str = fp.read()
     fp.close()
@@ -35,6 +35,7 @@ def ClientDownloadTrFromServer(mysock,f,paramfilename):
     fhead = mysock.recv(FILEINFO_SIZE)
 
     revfilename, temp1, filesize, temp2 = struct.unpack('<128s32sI8s', fhead)
+    print("  ...")
     revfilename = revfilename.decode('utf-8')
     revfilename = revfilename.strip("\00")
     fullfilename = clientfilepath + revfilename

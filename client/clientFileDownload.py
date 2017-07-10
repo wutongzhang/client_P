@@ -62,7 +62,7 @@ def ClientDownloadFileFromServer(mysock,f,paramfilename):
     t = tarfile.open(fullfilename)
     t.extractall(clientfilepath)
     t.close()
-    #os.remove(fullfilename)
+    os.remove(fullfilename)
     # else:
     #     mylog(3, f, "ClientDownload1FileFromServer;File does not exist!")
     #     pass
